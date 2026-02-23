@@ -68,7 +68,7 @@ VERIFICATION_SECRET=$(echo -n "${MASTER_SECRET}:${INSTANCE_ID}" | sha256sum | cu
 # =============================================================================
 
 sudo apt-get update
-sudo apt-get install -y net-tools nmap tree nginx inotify-tools figlet lolcat
+sudo apt-get install -y net-tools nmap tree nginx inotify-tools figlet lolcat netcat-openbsd
 
 for f in /etc/update-motd.d/*; do
     sudo chmod -x "$f" 2>/dev/null || true

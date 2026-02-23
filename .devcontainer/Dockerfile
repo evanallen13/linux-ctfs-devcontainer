@@ -14,11 +14,13 @@ RUN apt-get update \
         iproute2 \
         iputils-ping \
         netcat-openbsd \
+        openssh-server \
         procps \
         less \
         vim-common \
         gnupg \
         lsb-release \
+        git /
     && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -s /bin/bash vscode \
