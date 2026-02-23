@@ -42,6 +42,27 @@ Deploy your CTF lab using your preferred cloud provider:
 | Azure | ~$0.05 | [Azure Setup](./azure/README.md) |
 | GCP | ~$0.03 | [GCP Setup](./gcp/README.md) |
 
+### Local Testing with Dev Container (Contributors)
+
+This repository includes a systemd-enabled dev container that runs `ctf_setup.sh` automatically, so you can test in a local environment that closely matches the cloud VM setup.
+
+1. Open the repo in VS Code.
+2. Run **Dev Containers: Reopen in Container**.
+3. Wait for `postCreateCommand` to finish provisioning.
+4. Switch to the challenge user:
+
+	```bash
+	sudo -iu ctf_user
+	```
+
+5. Confirm the environment:
+
+	```bash
+	verify list
+	```
+
+To reprovision from scratch, rebuild the dev container.
+
 ## Completing the CTF
 
 Once you've solved all 18 challenges, export your completion certificate:

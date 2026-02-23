@@ -1,0 +1,28 @@
+{
+  "name": "linux-ctf-local",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "overrideCommand": false,
+  "remoteUser": "vscode",
+  "runArgs": [
+    "--privileged",
+    "--cgroupns=host",
+    "--tmpfs",
+    "/tmp",
+    "--tmpfs",
+    "/run",
+    "--tmpfs",
+    "/run/lock",
+    "-v",
+    "/sys/fs/cgroup:/sys/fs/cgroup:rw"
+  ],
+  "postCreateCommand": "bash .devcontainer/provision-ctf.sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}
