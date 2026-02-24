@@ -27,7 +27,8 @@ RUN apt-get update \
 RUN \
     mkdir -p /home/ctf_user/ctf_challenges && \
     touch /home/ctf_user/ctf_challenges/encoded_flag.txt && \
-    chmod 777 /home/ctf_user/ctf_challenges/encoded_flag.txt
+    chmod 777 /home/ctf_user/ctf_challenges/encoded_flag.txt && \
+    touch /usr/local/bin/check_setup && chmod 777 /usr/local/bin/check_setup
     
 RUN useradd -m -s /bin/bash vscode \
     && echo "vscode ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vscode \
