@@ -21,6 +21,8 @@ RUN apt-get update \
         gnupg \
         lsb-release \
         git \
+        cron \
+        nano \
     && rm -rf /var/lib/apt/lists/*
 
 RUN \
