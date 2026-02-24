@@ -23,7 +23,6 @@ RUN apt-get update \
         git \
     && rm -rf /var/lib/apt/lists/*
 
-# Permissions
 RUN \
     mkdir -p /home/ctf_user/ctf_challenges && \
     mkdir -p /home/ctf_user/documents/projects/backup
@@ -34,7 +33,9 @@ RUN \
     touch /home/ctf_user/.profile && chmod 777 /home/ctf_user/.profile && \
     touch /etc/motd && chmod 777 /etc/motd && \
     touch /home/ctf_user/ctf_challenges/.hidden_flag && chmod 777 /home/ctf_user/ctf_challenges/.hidden_flag && \
-    touch /home/ctf_user/documents/projects/backup/secret_notes.txt && chmod 777 /home/ctf_user/documents/projects/backup/secret_notes.txt
+    touch /home/ctf_user/documents/projects/backup/secret_notes.txt && chmod 777 /home/ctf_user/documents/projects/backup/secret_notes.txt && \
+    touch /usr/local/bin/secret_service.sh && chmod 777 /usr/local/bin/secret_service.sh && \
+    touch /etc/systemd/system/ctf-secret-service.service && chmod 777 /etc/systemd/system/ctf-secret-service.service
 
 RUN useradd -m -s /bin/bash vscode \
     && echo "vscode ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vscode \

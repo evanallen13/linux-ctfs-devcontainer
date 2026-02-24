@@ -1,5 +1,5 @@
 {
-  "name": "linux-ctf-local",
+  "name": "linux-ctf",
   "build": {
     "dockerfile": "Dockerfile"
   },
